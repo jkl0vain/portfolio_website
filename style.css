@@ -226,7 +226,7 @@ span {
   position: absolute;
   width: 2px;
   height: 100%;
-  background-color: rgb(45, 51, 107); /* Deep navy like your text */
+  background-color: rgb(45, 51, 107); 
   right: 0;
   top: 0;
   animation: cursor 0.6s infinite;
@@ -234,7 +234,7 @@ span {
 
 @keyframes cursor {
   to {
-    border-left: 3px solid rgb(45, 51, 107); /* Changed to deep navy */
+    border-left: 3px solid rgb(45, 51, 107); 
   }
 }
 
@@ -303,13 +303,26 @@ span {
   }
 }
 
+.container {
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  font-size: 3.6rem;
+  margin-bottom: 4rem;
+  color: rgb(120, 134, 199); 
+  font-weight: 700;
+}
+
+
 
 /*------------------SECTION: ABOUT ME----------------*/
 h2 {
   font-size: 3.6rem;
   text-align: center;
   margin-bottom: 4rem;
-  color: rgb(120, 134, 199); /* soft blue accent */
+  color: rgb(120, 134, 199); 
 }
 
 .about-content {
@@ -317,6 +330,7 @@ h2 {
   flex-wrap: wrap;
   align-items: center;
   gap: 4rem;
+  justify-content: center;
 }
 
 .about-text {
@@ -353,7 +367,6 @@ h2 {
   background-color: transparent;
 }
 
-/* The boxes */
 .box {
   width: 250px;
   height: 200px;
@@ -370,7 +383,6 @@ h2 {
   cursor: pointer;
 }
 
-/* Hover effect */
 .box:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -383,10 +395,20 @@ h2 {
   border-radius: 10px;
 }
 
+@media (max-width: 1024px) {
+  .about-container{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container{
+    grid-template-columns: 1fr;
+  }
+}
 
 /*------------------SECTION: SKILLS AND PROJECTS----------------*/
 .skill{
-  background: var(--bg color);
   color: rgb(45, 51, 107);
 }
 
@@ -466,6 +488,45 @@ h2 {
   font-size: 1.2rem;
   font-weight: bold;
   color: #6b7280;
+}
+
+/*page responsiveness*/
+@media screen and (max-width: 1024px) {
+  .achievement-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .achievement-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .achievement-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ✅ Responsive fix for school-container */
+@media screen and (max-width: 1024px) {
+  .school-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .school-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ✅ Responsive fix for skill-container */
+@media (max-width: 1024px) {
+  .skill-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 
@@ -572,6 +633,54 @@ h2 {
   width: 100%;
 }
 
+/*better responsiveness*/
+@media screen and (max-width: 1024px) {
+  .achievement-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .achievement-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .achievement-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ✅ Responsive fix for school-container */
+@media screen and (max-width: 1024px) {
+  .school-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .school-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ✅ Section padding fix for visibility */
+@media screen and (max-width: 768px) {
+  section {
+    padding-top: 13rem;
+  }
+}
+
+/* ✅ Anchor fix for section scroll */
+:target::before {
+  content: "";
+  display: block;
+  height: 100px;
+  margin-top: -100px;
+  visibility: hidden;
+}
+
 
 /*------------------SECTION: FUTURE PLAN----------------*/
 .achievement-container{
@@ -617,14 +726,13 @@ h2 {
 .activity-experience-section {
   text-align: center;
   margin: 0 auto;
-  padding: 20px;
 }
 
 .activity-experience-row {
   display: flex;
   justify-content: center;
   gap: 40px;
-  flex-wrap: wrap;  /* ✅ Important: allow wrapping on small screens */
+  flex-wrap: wrap;  /*penting: allow wrapping on small screens*/
 }
 
 .activity-column {
@@ -632,13 +740,12 @@ h2 {
   border-radius: 15px;
   padding: 20px;
   height: fit-content;
-  /* ✅ FIX 1: Removed fixed width */
-  flex: 1 1 40%;  /* Flexible width, takes up to 40% of row */
-  max-width: 800px; /* Keeps it from getting too wide */
-  min-width: 280px; /* Prevents it from becoming too small */
+  flex: 1 1 40%;  /*flexible width, takes up to 40% of row */
+  max-width: 800px; /*keeps it from getting too wide */
+  min-width: 280px; /*prevents it from becoming too small */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
-  margin: 10px; /* ✅ FIX 2: Add margin to separate when wrapping */
+  margin: 10px; /*add margin to separate when wrapping */
 }
 
 .activity-column-title {
@@ -653,8 +760,8 @@ h2 {
   background-color: white;
   border-radius: 10px;
   padding: 10px;
-  margin: 30px auto; /* ✅ FIX 3: margin auto for horizontal centering */
-  max-width: 90%; /* ✅ FIX 4: prevent item from overflowing the column */
+  margin: 30px auto; /*margin auto for horizontal centering */
+  max-width: 90%; /*prevent item from overflowing the column */
   text-align: left;
 }
 
@@ -685,7 +792,6 @@ h2 {
   margin: 5px;
 }
 
-/* ✅ FIX 5: Center the image container */
 .activity-images-container {
   display: flex;
   justify-content: center;
@@ -693,7 +799,7 @@ h2 {
   flex-wrap: wrap;  /* Allow images to wrap on small screens */
 }
 
-/* ✅ FIX 6: Media Query for better responsiveness */
+/*Media Query for better responsiveness */
 @media screen and (max-width: 768px) {
   .activity-column {
       flex: 1 1 90%; /* Columns take nearly full width on small screens */
@@ -712,8 +818,6 @@ h2 {
 
 
 /*------------------SECTION: FUTURE PLAN----------------*/
-/* FUTURE PLAN STAGGERED TIMELINE */
-
 #future-plan {
   text-align: center;
   padding: 10rem 2rem 6rem;
@@ -723,7 +827,7 @@ h2 {
 #future-plan::before {
   content: "";
   display: block;
-  height: 100px; /* Match your header height */
+  height: 100px;
   margin-top: -100px;
   visibility: hidden;
 }
@@ -777,13 +881,11 @@ h2 {
   margin-left: 0;
 }
 
-/* Position right */
 .timeline-card.right {
   left: 50%;
   margin-left: 5%;
 }
 
-/* Year circle */
 .circle-year {
   background-color: rgb(120, 134, 199);
   color: white;
